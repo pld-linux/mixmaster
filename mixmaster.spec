@@ -1,4 +1,4 @@
-# $Revision: 1.7 $ $Date: 2002-01-18 02:13:52 $
+# $Revision: 1.8 $ $Date: 2002-02-22 23:29:16 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -6,8 +6,6 @@ Version:	2.0.3
 Release:	1
 License:	BSD
 Group:		Applications/Networking
-Group(de):	Applikationen/Netzwerkwesen
-Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.hacktic.nl/pub/replay/pub/remailer/%{name}-%{version}.tar.gz
 Patch0:		%{name}-2.0.3-1-linux.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
