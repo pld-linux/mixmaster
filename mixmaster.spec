@@ -1,4 +1,4 @@
-# $Revision: 1.4 $ $Date: 2000-05-28 10:05:36 $
+# $Revision: 1.5 $ $Date: 2000-06-09 07:54:44 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -29,7 +29,7 @@ tar -xvf mix-%{version}.tar
 
 %build
 cd ./Mix/Src
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
