@@ -1,4 +1,4 @@
-# $Revision: 1.14 $ $Date: 2004-09-16 15:49:50 $
+# $Revision: 1.15 $ $Date: 2005-04-02 13:59:09 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir %{_sysconfdir}/mixmaster
-%config %{_sysconfdir}/mixmaster/mixmaster.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/mixmaster/mixmaster.conf
 %doc README* mix.help*
 %attr(755,root,root) %{_bindir}/mixmaster
 %dir %{_datadir}/mixmaster
