@@ -1,13 +1,14 @@
-# $Revision: 1.11 $ $Date: 2003-05-25 05:50:36 $
+# $Revision: 1.12 $ $Date: 2003-06-18 08:33:54 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
-Version:	2.0.3
-Release:	1
-License:	BSD
+Version:	2.0.4b46
+%define		_ver	%(echo %{version}|tr -d .)
+Release:	0.1
+License:	GPL v1
 Group:		Applications/Networking
-Source0:	ftp://ftp.hacktic.nl/pub/replay/pub/remailer/%{name}-%{version}.tar.gz
-Patch0:		%{name}-2.0.3-1-linux.patch
+Source0:	http://dl.sourceforge.net/%{name}/mix%{_ver}.tar.gz
+# Source0-md5:	f1f0e9eefd637ae575d9b0834f48c4b4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,20 +22,17 @@ elektronicznej. Mixmaster to remailer typu II, stanowi±cy ulepszon±
 wersjê remailerów ,,cypherpunk''.
 
 %prep
-%setup -q
-%setup -q -T -D -a 0
-tar -xvf mix-%{version}.tar
-%patch -p0
+%setup -q -n Mix-%{_ver}
 
 %build
-cd ./Mix/Src
+cd Src
+cp -f Makefile-bsafe Makefile
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir},%{_sysconfdir}}/mixmaster
 
-cd ./Mix
 install mixmaster $RPM_BUILD_ROOT%{_bindir}
 install	mixmaster.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install destination.block \
@@ -52,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_sysconfdir}/mixmaster
 %config %{_sysconfdir}/mixmaster/mixmaster.conf
-%doc Mix/README* Mix/mix.help*
+%doc README* mix.help*
 %attr(755,root,root) %{_bindir}/mixmaster
 %dir %{_datadir}/mixmaster
 %{_datadir}/mixmaster/destination.block
