@@ -1,4 +1,4 @@
-# $Revision: 1.2 $ $Date: 1999-12-15 11:11:19 $
+# $Revision: 1.3 $ $Date: 2000-04-01 11:14:53 $
 Summary:    Mixmaster anonymous remailer.
 Summary(pl):    Anonimowy remailer typu Mixmaster.
 Name:       mixmaster
@@ -9,7 +9,7 @@ Group: 		Applications/Networking
 Group(pl):  Narzêdzia/Sieciowe
 Source: 	ftp://ftp.hacktic.nl/pub/replay/pub/remailer/%{name}-%{version}.tar.gz
 Patch: mixmaster-2.0.3-1-linux.patch
-BuildRoot:  /tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Mixmaster is a remailer, allowing you to send an anonymous email.
