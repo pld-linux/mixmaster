@@ -1,4 +1,4 @@
-# $Revision: 1.13 $ $Date: 2003-06-18 08:41:52 $
+# $Revision: 1.14 $ $Date: 2004-09-16 15:49:50 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -8,6 +8,7 @@ License:	GPL v1
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	c10d1f7c35177748d947aab64143494a
+URL:		http://mixmaster.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
