@@ -1,14 +1,13 @@
-# $Revision: 1.12 $ $Date: 2003-06-18 08:33:54 $
+# $Revision: 1.13 $ $Date: 2003-06-18 08:41:52 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
-Version:	2.0.4b46
-%define		_ver	%(echo %{version}|tr -d .)
-Release:	0.1
+Version:	2.9.0
+Release:	1
 License:	GPL v1
 Group:		Applications/Networking
-Source0:	http://dl.sourceforge.net/%{name}/mix%{_ver}.tar.gz
-# Source0-md5:	f1f0e9eefd637ae575d9b0834f48c4b4
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	c10d1f7c35177748d947aab64143494a
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,12 +21,11 @@ elektronicznej. Mixmaster to remailer typu II, stanowi±cy ulepszon±
 wersjê remailerów ,,cypherpunk''.
 
 %prep
-%setup -q -n Mix-%{_ver}
+%setup -q
 
 %build
-cd Src
-cp -f Makefile-bsafe Makefile
-%{__make}
+./Install
+#%%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
