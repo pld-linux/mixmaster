@@ -1,4 +1,4 @@
-# $Revision: 1.5 $ $Date: 2000-06-09 07:54:44 $
+# $Revision: 1.6 $ $Date: 2001-10-09 09:32:35 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -6,9 +6,10 @@ Version:	2.0.3
 Release:	1
 License:	BSD
 Group:		Applications/Networking
-Group(pl):	Narzêdzia/Sieciowe
+Group(de):	Applikationen/Netzwerkwesen
+Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.hacktic.nl/pub/replay/pub/remailer/%{name}-%{version}.tar.gz
-Patch0:		mixmaster-2.0.3-1-linux.patch
+Patch0:		%{name}-2.0.3-1-linux.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,34 +34,31 @@ cd ./Mix/Src
 
 %install
 rm -rf $RPM_BUILD_ROOT
-if [ ! -d %{_datadir}/mixmaster ]; then
-	install -d %{_datadir}/mixmaster
-fi
-if [ ! -d %{_sysconfdir}/mixmaster ]; then
-	install -d %{_sysconfdir}/mixmaster
-fi
+install -d $RPM_BUILD_ROOT{%{_datadir},%{_sysconfdir}}/mixmaster
+
 cd ./Mix
-install mixmaster {%_bindir}
-install	mixmaster.conf %{_sysconfdir}
+install mixmaster $RPM_BUILD_ROOT%{_bindir}
+install	mixmaster.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install destination.block \
 		mix.key \
 		pubring.mix	\
 		source.block \
 		type2.list \
-		%{_datadir}/mixmaster
-install mixmaster.1 %{_mandir}/man1
-cp ./mixmaster.1 %{_prefix}/man/man1
+		$RPM_BUILD_ROOT%{_datadir}/mixmaster
+install mixmaster.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf Mix/README Mix/mix.help ${_mandir}/man1/* || :
+gzip -9nf Mix/README Mix/mix.help
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{_datadir}/mixmaster
 %dir %{_sysconfdir}/mixmaster
 %config %{_sysconfdir}/mixmaster/mixmaster.conf
-%doc ./Mix/README*
-%doc ./Mix/mix.help
+%doc Mix/README* Mix/mix.help*
 %attr(755,root,root) %{_bindir}/mixmaster
+%dir %{_datadir}/mixmaster
 %{_datadir}/mixmaster/destination.block
 %{_datadir}/mixmaster/mix.key
 %{_datadir}/mixmaster/pubring.mix
