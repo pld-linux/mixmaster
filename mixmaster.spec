@@ -1,4 +1,4 @@
-# $Revision: 1.9 $ $Date: 2002-02-23 03:44:49 $
+# $Revision: 1.10 $ $Date: 2002-11-27 22:06:22 $
 Summary:	Mixmaster anonymous remailer
 Summary(pl):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
@@ -44,8 +44,6 @@ install destination.block \
 		type2.list \
 		$RPM_BUILD_ROOT%{_datadir}/mixmaster
 install mixmaster.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-gzip -9nf Mix/README Mix/mix.help
 
 %clean
 rm -rf $RPM_BUILD_ROOT
