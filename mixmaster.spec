@@ -1,6 +1,6 @@
-# $Revision: 1.15 $ $Date: 2005-04-02 13:59:09 $
+# $Revision: 1.16 $ $Date: 2007-02-12 00:49:07 $
 Summary:	Mixmaster anonymous remailer
-Summary(pl):	Anonimowy remailer typu Mixmaster
+Summary(pl.UTF-8):   Anonimowy remailer typu Mixmaster
 Name:		mixmaster
 Version:	2.9.0
 Release:	1
@@ -16,10 +16,10 @@ Mixmaster is a remailer, allowing you to send an anonymous email.
 Mixmaster is type II remailer, which is improved version of old
 ,,cypherpunks'' remailers.
 
-%description -l pl
-Mixmaster jest remailerem, pozwalaj±cym na wysy³anie anonimowej poczty
-elektronicznej. Mixmaster to remailer typu II, stanowi±cy ulepszon±
-wersjê remailerów ,,cypherpunk''.
+%description -l pl.UTF-8
+Mixmaster jest remailerem, pozwalajÄ…cym na wysyÅ‚anie anonimowej poczty
+elektronicznej. Mixmaster to remailer typu II, stanowiÄ…cy ulepszonÄ…
+wersjÄ™ remailerÃ³w ,,cypherpunk''.
 
 %prep
 %setup -q
