@@ -1,6 +1,6 @@
-# $Revision: 1.16 $ $Date: 2007-02-12 00:49:07 $
+# $Revision: 1.17 $ $Date: 2007-02-13 06:46:54 $
 Summary:	Mixmaster anonymous remailer
-Summary(pl.UTF-8):   Anonimowy remailer typu Mixmaster
+Summary(pl.UTF-8):	Anonimowy remailer typu Mixmaster
 Name:		mixmaster
 Version:	2.9.0
 Release:	1
